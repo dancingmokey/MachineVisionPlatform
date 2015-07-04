@@ -1,6 +1,6 @@
 ﻿namespace UIDemo
 {
-    partial class MainForm
+    partial class AvtForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.CtrlBtn = new System.Windows.Forms.Button();
+            this.SettingBtn = new System.Windows.Forms.Button();
             this.PropertyBtn = new System.Windows.Forms.Button();
-            this.CameraCBox = new System.Windows.Forms.ComboBox();
-            this.CameraCtrl = new AxNeptuneLib.AxNeptuneCtrl();
+            this.SaveCBox = new System.Windows.Forms.CheckBox();
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.TimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -43,12 +42,12 @@
             this.LatitudeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.SpeedLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.FrameCntLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CameraCtrl = new TIS.Imaging.ICImagingControl();
             this.UpdateTimeTicker = new System.Windows.Forms.Timer(this.components);
-            this.SaveCBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraCtrl)).BeginInit();
             this.MainStatusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraCtrl)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -56,8 +55,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CameraCtrl, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.MainStatusStrip, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.CameraCtrl, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -72,14 +71,14 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 240F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.CtrlBtn, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.PropertyBtn, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.CameraCBox, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.SaveCBox, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.SettingBtn, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.PropertyBtn, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.SaveCBox, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -99,10 +98,21 @@
             this.CtrlBtn.UseVisualStyleBackColor = true;
             this.CtrlBtn.Click += new System.EventHandler(this.CtrlBtn_Click);
             // 
+            // SettingBtn
+            // 
+            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SettingBtn.Location = new System.Drawing.Point(93, 3);
+            this.SettingBtn.Name = "SettingBtn";
+            this.SettingBtn.Size = new System.Drawing.Size(84, 23);
+            this.SettingBtn.TabIndex = 4;
+            this.SettingBtn.Text = "Setting";
+            this.SettingBtn.UseVisualStyleBackColor = true;
+            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
+            // 
             // PropertyBtn
             // 
             this.PropertyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PropertyBtn.Location = new System.Drawing.Point(423, 3);
+            this.PropertyBtn.Location = new System.Drawing.Point(183, 3);
             this.PropertyBtn.Name = "PropertyBtn";
             this.PropertyBtn.Size = new System.Drawing.Size(84, 23);
             this.PropertyBtn.TabIndex = 1;
@@ -110,27 +120,17 @@
             this.PropertyBtn.UseVisualStyleBackColor = true;
             this.PropertyBtn.Click += new System.EventHandler(this.PropertyBtn_Click);
             // 
-            // CameraCBox
+            // SaveCBox
             // 
-            this.CameraCBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CameraCBox.FormattingEnabled = true;
-            this.CameraCBox.Location = new System.Drawing.Point(93, 3);
-            this.CameraCBox.Name = "CameraCBox";
-            this.CameraCBox.Size = new System.Drawing.Size(234, 20);
-            this.CameraCBox.TabIndex = 2;
-            this.CameraCBox.SelectedIndexChanged += new System.EventHandler(this.CameraCBox_SelectedIndexChanged);
-            // 
-            // CameraCtrl
-            // 
-            this.CameraCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CameraCtrl.Enabled = true;
-            this.CameraCtrl.Location = new System.Drawing.Point(3, 38);
-            this.CameraCtrl.Name = "CameraCtrl";
-            this.CameraCtrl.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("CameraCtrl.OcxState")));
-            this.CameraCtrl.Size = new System.Drawing.Size(567, 345);
-            this.CameraCtrl.TabIndex = 3;
-            this.CameraCtrl.ImageReceived += new AxNeptuneLib._INeptuneEvents_ImageReceivedEventHandler(this.CameraCtrl_ImageReceived);
+            this.SaveCBox.AutoSize = true;
+            this.SaveCBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SaveCBox.Location = new System.Drawing.Point(273, 3);
+            this.SaveCBox.Name = "SaveCBox";
+            this.SaveCBox.Size = new System.Drawing.Size(84, 23);
+            this.SaveCBox.TabIndex = 3;
+            this.SaveCBox.Text = "Save";
+            this.SaveCBox.UseVisualStyleBackColor = true;
+            this.SaveCBox.CheckedChanged += new System.EventHandler(this.SaveCBox_CheckedChanged);
             // 
             // MainStatusStrip
             // 
@@ -183,38 +183,43 @@
             this.FrameCntLabel.Size = new System.Drawing.Size(42, 17);
             this.FrameCntLabel.Text = "帧数:0";
             // 
+            // CameraCtrl
+            // 
+            this.CameraCtrl.BackColor = System.Drawing.Color.White;
+            this.CameraCtrl.DeviceListChangedExecutionMode = TIS.Imaging.EventExecutionMode.Invoke;
+            this.CameraCtrl.DeviceLostExecutionMode = TIS.Imaging.EventExecutionMode.AsyncInvoke;
+            this.CameraCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CameraCtrl.ImageAvailableExecutionMode = TIS.Imaging.EventExecutionMode.MultiThreaded;
+            this.CameraCtrl.LiveDisplayPosition = new System.Drawing.Point(0, 0);
+            this.CameraCtrl.Location = new System.Drawing.Point(3, 38);
+            this.CameraCtrl.Name = "CameraCtrl";
+            this.CameraCtrl.Size = new System.Drawing.Size(567, 345);
+            this.CameraCtrl.TabIndex = 5;
+            this.CameraCtrl.ImageAvailable += new System.EventHandler<TIS.Imaging.ICImagingControl.ImageAvailableEventArgs>(this.CameraCtrl_ImageAvailable);
+            this.CameraCtrl.DeviceLost += new System.EventHandler<TIS.Imaging.ICImagingControl.DeviceLostEventArgs>(this.CameraCtrl_DeviceLost);
+            // 
             // UpdateTimeTicker
             // 
             this.UpdateTimeTicker.Tick += new System.EventHandler(this.UpdateTimeTicker_Tick);
             // 
-            // SaveCBox
-            // 
-            this.SaveCBox.AutoSize = true;
-            this.SaveCBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SaveCBox.Location = new System.Drawing.Point(333, 3);
-            this.SaveCBox.Name = "SaveCBox";
-            this.SaveCBox.Size = new System.Drawing.Size(84, 23);
-            this.SaveCBox.TabIndex = 3;
-            this.SaveCBox.Text = "Save";
-            this.SaveCBox.UseVisualStyleBackColor = true;
-            this.SaveCBox.CheckedChanged += new System.EventHandler(this.SaveCBox_CheckedChanged);
-            // 
-            // MainForm
+            // AvtForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 416);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "MainForm";
+            this.Name = "AvtForm";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AvtForm_FormClosing);
+            this.Load += new System.EventHandler(this.AvtForm_Load);
+            this.SizeChanged += new System.EventHandler(this.AvtForm_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CameraCtrl)).EndInit();
             this.MainStatusStrip.ResumeLayout(false);
             this.MainStatusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraCtrl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,8 +230,6 @@
         private System.Windows.Forms.Button CtrlBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button PropertyBtn;
-        private AxNeptuneLib.AxNeptuneCtrl CameraCtrl;
-        private System.Windows.Forms.ComboBox CameraCBox;
         private System.Windows.Forms.StatusStrip MainStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel LongitudeLabel;
@@ -236,6 +239,8 @@
         private System.Windows.Forms.Timer UpdateTimeTicker;
         private System.Windows.Forms.ToolStripStatusLabel TimeLabel;
         private System.Windows.Forms.CheckBox SaveCBox;
+        private TIS.Imaging.ICImagingControl CameraCtrl;
+        private System.Windows.Forms.Button SettingBtn;
     }
 }
 

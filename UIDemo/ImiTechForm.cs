@@ -11,14 +11,14 @@ using GPS;
 
 namespace UIDemo
 {
-    public partial class MainForm : Form
+    public partial class ImiTechForm : Form
     {
         private bool _bIsStart = false;
         private bool _bIsSave = false;
         private int _nSaveCount = 0;
         private static GPSCtrl _pGPSCtrl = new GPSCtrl();
 
-        public MainForm()
+        public ImiTechForm()
         {
             InitializeComponent();
             InitializeEnv();
@@ -99,11 +99,11 @@ namespace UIDemo
             {
                 if (_bIsStart == true)
                 {
-                    string strGPS = _pGPSCtrl.RMCData.UTCDate + " " + _pGPSCtrl.RMCData.UTCTime;
+                    string strGPS = _pGPSCtrl.RMCData.UTCDate + " " + _pGPSCtrl.RMCData.LocalTime;
                     strGPS += " ";
-                    strGPS += _pGPSCtrl.RMCData.LongitudeDirection.ToString().Substring(0, 1) + _pGPSCtrl.RMCData.Longitude;
+                    strGPS +=  _pGPSCtrl.RMCData.Longitude;
                     strGPS += " ";
-                    strGPS += _pGPSCtrl.RMCData.LatitudeDirection.ToString().Substring(0, 1) + _pGPSCtrl.RMCData.Latitude;
+                    strGPS += _pGPSCtrl.RMCData.Latitude;
                     strGPS += " ";
                     strGPS += (_pGPSCtrl.RMCData.Speed * 1.8).ToString();
                     
@@ -137,10 +137,10 @@ namespace UIDemo
             if (_bIsStart == true)
             {
                 StatusLabel.Text = "状态:运行中";
-                TimeLabel.Text = "UTC时间:" + _pGPSCtrl.RMCData.UTCDate + " " + _pGPSCtrl.RMCData.UTCTime;
-                LongitudeLabel.Text = "经度:" + _pGPSCtrl.RMCData.LongitudeDirection.ToString().Substring(0, 1) + _pGPSCtrl.RMCData.Longitude;
-                LatitudeLabel.Text = "纬度:" + _pGPSCtrl.RMCData.LatitudeDirection.ToString().Substring(0, 1) + _pGPSCtrl.RMCData.Latitude;
-                SpeedLabel.Text = "速度:" + (_pGPSCtrl.RMCData.Speed * 1.8).ToString();
+                TimeLabel.Text = "UTC时间:" + _pGPSCtrl.RMCData.UTCDate + " " + _pGPSCtrl.RMCData.LocalTime;
+                LongitudeLabel.Text = "经度:" + _pGPSCtrl.RMCData.Longitude;
+                LatitudeLabel.Text = "纬度:" + _pGPSCtrl.RMCData.Latitude;
+                SpeedLabel.Text = "速度:" + _pGPSCtrl.RMCData.Speed.ToString();
                 FrameCntLabel.Text = "帧数:" + _nSaveCount.ToString();
             }
         }
