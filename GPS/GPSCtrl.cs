@@ -70,17 +70,15 @@ namespace GPS
             if (_pRmcData.AnalysisData(strRMCData) == true)
             {
                 Console.WriteLine("Status : " + _pRmcData.Status.ToString());
-                Console.WriteLine("Date Time : " + _pRmcData.UTCDate + " " + _pRmcData.UTCTime);
-                Console.WriteLine("Latitude : " + _pRmcData.LatitudeDirection.ToString() + " " + _pRmcData.Latitude);
-                Console.WriteLine("Logtitude : " + _pRmcData.LongitudeDirection.ToString() + " " + _pRmcData.Longitude);
-                Console.WriteLine("Speed : " + _pRmcData.Speed.ToString() + " knot");
+                Console.WriteLine("Date Time : " + _pRmcData.LocalTime);
+                Console.WriteLine("Latitude : " + _pRmcData.Latitude);
+                Console.WriteLine("Logtitude : " + _pRmcData.Longitude);
+                Console.WriteLine("Speed : " + _pRmcData.Speed.ToString() + " Km/h");
                 Console.WriteLine("Position Angle : " + _pRmcData.PosAngle.ToString());
                 Console.WriteLine("MagDeclination : " + _pRmcData.MagDirection.ToString() + " " + _pRmcData.MagDeclination.ToString());
             }
 
-
-
-            Console.WriteLine(strRecvData);
+            //Console.WriteLine(strRecvData);
             Console.WriteLine("\n");
         }
 

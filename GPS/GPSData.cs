@@ -240,8 +240,8 @@ namespace GPS
         /// <summary>
         /// 定义UTC时间，格式为 hhmmss.sss
         /// </summary>
-        private string _strUTCTime = null;
-        public string UTCTime { get { return _strUTCTime; } set { _strUTCTime = value; } }
+        private string _strLocalTime = null;
+        public string LocalTime { get { return _strLocalTime; } set { _strLocalTime = value; } }
 
         /// <summary>
         /// 定义GPS状态，0（未定位）/ 1（非差分定位）/ 2（差分定位）/ 3（无效PPS）/ 6（正在估算）
@@ -250,31 +250,19 @@ namespace GPS
         public GpsStatus Status { get { return _gsStatus; } set { _gsStatus = value; } }
 
         /// <summary>
-        /// 定义纬度，格式为 ddmm.mmmm
+        /// 定义纬度，格式为 N/S ddmm.ssss
         /// </summary>
         private string _strLatitude = null;
         public string Latitude { get { return _strLatitude; } set { _strLatitude = value; } }
 
         /// <summary>
-        /// 定义纬度方向，N（北纬）/ S（南纬）
-        /// </summary>
-        private Direction _drLatitude = Direction.Unknown;
-        public Direction LatitudeDirection { get { return _drLatitude; } set { _drLatitude = value; } }
-
-        /// <summary>
-        /// 定义经度，格式为 ddmm.mmmm
+        /// 定义经度，格式为 E/W ddmm.ssss
         /// </summary>
         private string _strLongitude = null;
         public string Longitude { get { return _strLongitude; } set { _strLongitude = value; } }
 
         /// <summary>
-        /// 定义速度，节
-        /// </summary>
-        private Direction _drLongitude = Direction.Unknown;
-        public Direction LongitudeDirection { get { return _drLongitude; } set { _drLongitude = value; } }
-
-        /// <summary>
-        /// 定义经度方向，E（东经）/ W（西经）
+        /// 定义速度，单位为km/h
         /// </summary>
         private double _dSpeed = 0;
         public double Speed { get { return _dSpeed; } set { _dSpeed = value; } }
@@ -334,33 +322,32 @@ namespace GPS
                 return false;
             }
 
-            // 判断是否定位
-            if (strMsgItems[2] == "V")
-            {
-                _strErrorMsg = "GPS未定位";
-                return false;
-            }
-
             // 解析消息
             try
             {
                 // 解析日期及时间
-                _strUTCTime = strMsgItems[1];
-                _strUTCDate = strMsgItems[9];
+                _strLocalTime = GPSFunctions.ParseDateTime(strMsgItems[9], strMsgItems[1]);
 
-                // 解析GPS状态
-                _gsStatus = GpsStatus.Non_DiffPosition;
-
-                // 解析经度
-                _strLongitude = strMsgItems[5];
-                _drLongitude = ((strMsgItems[6] == "E") ? Direction.East : Direction.West);
+                // 解析GPS状态, 判断是否定位
+                if (strMsgItems[2] == "V")
+                {
+                    _gsStatus = GpsStatus.UnPosition;
+                    _strErrorMsg = "GPS未定位";
+                    return false;
+                }
+                else
+                {
+                    _gsStatus = GpsStatus.Non_DiffPosition;
+                }
 
                 // 解析纬度
-                _strLatitude = strMsgItems[3];
-                _drLatitude = ((strMsgItems[4] == "N") ? Direction.North : Direction.South);
+                _strLatitude = GPSFunctions.ParseLatitudeAndLongitude(strMsgItems[4], strMsgItems[3]);
+
+                // 解析经度
+                _strLongitude = GPSFunctions.ParseLatitudeAndLongitude(strMsgItems[6], strMsgItems[5]);
 
                 // 解析速度
-                _dSpeed = Double.Parse((strMsgItems[7] == "") ? "0" : strMsgItems[7]);
+                _dSpeed = GPSFunctions.ParseSpeed(strMsgItems[7]);
 
                 // 解析定位角
                 _nPosAngle = Int32.Parse((strMsgItems[8] == "") ? "0" : strMsgItems[8]);
