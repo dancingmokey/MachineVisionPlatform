@@ -27,6 +27,9 @@ namespace GPS
             dRightVal = (dRightVal - nMinVal) * 60.0d;
             double dSecVal = (int)(dRightVal * 60);
 
+            //
+            strDestValue = nDegreeVal.ToString() + nMinVal.ToString() + dSecVal.ToString();
+
             return strDestValue;
         }
     }
