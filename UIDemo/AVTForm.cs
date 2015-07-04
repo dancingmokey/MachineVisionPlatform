@@ -32,6 +32,11 @@ namespace UIDemo
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CtrlBtn_Click(object sender, EventArgs e)
         {
             if (_bIsStart == false)
