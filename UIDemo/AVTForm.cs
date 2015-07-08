@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GPS;
+using System.IO;
 
 namespace UIDemo
 {
@@ -27,6 +28,9 @@ namespace UIDemo
         private delegate void DeviceLostDelegate();
         private delegate void ShowBufferDelegate(TIS.Imaging.ImageBuffer buffer);
 
+        private FileStream _fsGPSRecord = null;
+        private StreamWriter _swGPSRecord = null;
+
         public AvtForm()
         {
             InitializeComponent();
@@ -43,6 +47,10 @@ namespace UIDemo
             {
                 _pGPSCtrl.CreateGPSCtrl();
 
+                _fsGPSRecord = new FileStream("GPS_Record_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".log", FileMode.Create, FileAccess.Write);
+                _swGPSRecord = new StreamWriter(_fsGPSRecord);
+                _swGPSRecord.AutoFlush = true;
+
                 _nSaveCount = 0;
                 StartLiveVideo();
 
@@ -54,6 +62,9 @@ namespace UIDemo
             else
             {
                 _pGPSCtrl.DestroyGPSCtrl();
+
+                _swGPSRecord.Close();
+                _fsGPSRecord.Close();
 
                 StopLiveVideo();
 
@@ -110,6 +121,12 @@ namespace UIDemo
                 LatitudeLabel.Text = "纬度:" + _pGPSCtrl.RMCData.Latitude;
                 SpeedLabel.Text = "速度:" + (_pGPSCtrl.RMCData.Speed * 1.8).ToString();
                 FrameCntLabel.Text = "帧数:" + _nSaveCount.ToString();
+
+                _swGPSRecord.WriteLine(_pGPSCtrl.RMCData.LocalTime + "\t" +
+                    _pGPSCtrl.RMCData.Longitude + "\t" +
+                    _pGPSCtrl.RMCData.Latitude + "\t" +
+                    (_pGPSCtrl.RMCData.Speed * 1.8).ToString() + "\t" + 
+                    _pGPSCtrl.RMCData.OrgData);
             }
         }
 
