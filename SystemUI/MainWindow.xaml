@@ -1,10 +1,11 @@
 ﻿<ribbon:RibbonWindow x:Class="SystemUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:UIElements="clr-namespace:UIElements;assembly=UIElements"
         xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
         Title="MainWindow"
 		x:Name="RibbonWindow"
-		Width="640" Height="480">
+		Width="800" Height="480">
 
 	<Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
@@ -20,27 +21,161 @@
                                                       ImageSource="Images\LargeIcon.png"/>
                 </ribbon:RibbonApplicationMenu>
             </ribbon:Ribbon.ApplicationMenu>
-            <ribbon:RibbonTab x:Name="HomeTab" 
-                              Header="Home">
-                <ribbon:RibbonGroup x:Name="Group1" 
-                                    Header="Group1">
-                    <ribbon:RibbonButton x:Name="Button1"
+            
+            <!-- 实时采集选项卡 开始 -->
+            <ribbon:RibbonTab x:Name="RealTimeTab" 
+                              Header="实时采集">
+                <!-- 实时采集选项卡-视图组 开始 -->
+                <ribbon:RibbonGroup x:Name="CamViewGroup" 
+                                    Header="视图">
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox11" 
+                                           Label="未知视图" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox12" 
+                                           Label="未知视图" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox13" 
+                                           Label="未知视图" 
+                                           Visibility="Hidden" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox14" 
+                                           Label="未知视图" 
+                                           IsChecked="True" />
+                </ribbon:RibbonGroup>
+                <!-- 实时采集选项卡-视图组 结束 -->
+
+                <!-- 实时采集选项卡-相机设置组 开始 -->
+                <ribbon:RibbonGroup x:Name="CameraGroup" 
+                                    Header="相机设置">
+                    <ribbon:RibbonComboBox x:Name="CamFormatCBox"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="格式" />
+                    <ribbon:RibbonComboBox x:Name="CamFrameRateCBox"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="帧率" />
+                    <ribbon:RibbonComboBox x:Name="CamOverlayCBox"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="水印" />
+                    <ribbon:RibbonButton x:Name="CamSettingBtn"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="相机设置" />
+                </ribbon:RibbonGroup>
+                <!-- 实时采集选项卡-相机设置组 结束 -->
+
+                <!-- 实时采集选项卡-GPS设置组 开始 -->
+                <ribbon:RibbonGroup x:Name="GPSGroup" 
+                                    Header="GPS设置">
+                    <ribbon:RibbonCheckBox x:Name="GPSPositionCkBox"
+                                         Label="经纬度" 
+                                         IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="GPSSpeedCkBox"
+                                         Label="速度" 
+                                         IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="GPSPosAngelCkBox"
+                                         Label="方位角" 
+                                         IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="GPSTimeCkBox"
+                                         Label="时间"
+                                         IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox2" 
+                                           Label="未知视图" 
+                                           Visibility="Hidden" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox3" 
+                                           Label="未知视图" 
+                                           Visibility="Hidden" 
+                                           IsChecked="True" />
+                </ribbon:RibbonGroup>
+                <!-- 实时采集选项卡-GPS设置组 结束 -->
+
+                <!-- 实时采集选项卡-存储设置组 内容 -->
+                <ribbon:RibbonGroup x:Name="StorageGroup" 
+                                    Header="存储设置">
+                    <ribbon:RibbonButton x:Name="Button9"
                                          LargeImageSource="Images\LargeIcon.png"
                                          Label="Button1" />
 
-                    <ribbon:RibbonButton x:Name="Button2"
+                    <ribbon:RibbonButton x:Name="Button10"
                                          SmallImageSource="Images\SmallIcon.png"
                                          Label="Button2" />
-                    <ribbon:RibbonButton x:Name="Button3"
+                    <ribbon:RibbonButton x:Name="Button11"
                                          SmallImageSource="Images\SmallIcon.png"
                                          Label="Button3" />
-                    <ribbon:RibbonButton x:Name="Button4"
+                    <ribbon:RibbonButton x:Name="Button12"
                                          SmallImageSource="Images\SmallIcon.png"
                                          Label="Button4" />
-                    
                 </ribbon:RibbonGroup>
-                
+
+                <!-- 实时采集选项卡-Logo组 开始 -->
+                <ribbon:RibbonGroup x:Name="CamLogoGroup" 
+                                    Header="">
+                    <Image Source="Images\Company_Logo.png" 
+                           HorizontalAlignment="Stretch" 
+                           VerticalAlignment="Stretch"/>
+                </ribbon:RibbonGroup>
+                <!-- 实时采集选项卡-Logo组 结束 -->
+
             </ribbon:RibbonTab>
+            <!-- 实时采集选项卡 结束 -->
+
+
+            <!-- 历史回放选项卡 开始 -->
+            <ribbon:RibbonTab x:Name="ReplayTab" 
+                              Header="历史回放">
+                <!-- 历史回放选项卡-视图组 开始 -->
+                <ribbon:RibbonGroup x:Name="ReplayViewGroup" 
+                                    Header="视图">
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox21" 
+                                           Label="未知视图" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox22" 
+                                           Label="未知视图" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox23" 
+                                           Label="未知视图" 
+                                           Visibility="Hidden" 
+                                           IsChecked="True" />
+                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox24" 
+                                           Label="未知视图" 
+                                           IsChecked="True" />
+                </ribbon:RibbonGroup>
+                <!-- 历史回放选项卡-视图组 结束 -->
+
+                <!-- 历史回放选项卡-回放设置组 开始 -->
+                <ribbon:RibbonGroup x:Name="ReplayGroup" 
+                                    Header="回放控制">
+                    <ribbon:RibbonComboBox x:Name="ReplayFPSCBox"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="速率" />
+                    <ribbon:RibbonComboBox x:Name="ReplayFPSCBox1"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="速率" />
+                    <ribbon:RibbonComboBox x:Name="ReplayFPSCBox2"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="速率" />
+                    <ribbon:RibbonButton Label="流媒体信息" 
+                                         LargeImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonSeparator Visibility="Visible"/>
+                    <ribbon:RibbonButton Label="播放"  LargeImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonButton Label="暂停"  LargeImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonButton Label="快退"  LargeImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonButton Label="快进"  LargeImageSource="Images\LargeIcon.png"/>
+                    <ribbon:RibbonSeparator Visibility="Visible"/>
+                    <ribbon:RibbonButton Label="刷新"  LargeImageSource="Images\LargeIcon.png"/>
+                </ribbon:RibbonGroup>
+                <!-- 历史回放选项卡-相机设置组 结束 -->
+
+                <!-- 历史回放选项卡-Logo组 开始 -->
+                <ribbon:RibbonGroup x:Name="ReplayLogoGroup" 
+                                    Header="">
+                    <Image Source="Images\Company_Logo.png" 
+                           HorizontalAlignment="Stretch" 
+                           VerticalAlignment="Stretch"/>
+                </ribbon:RibbonGroup>
+                <!-- 历史回放选项卡-Logo组 结束 -->
+
+            </ribbon:RibbonTab>
+            <!-- 历史回放选项卡 结束 -->
         </ribbon:Ribbon> 
         
     </Grid>
