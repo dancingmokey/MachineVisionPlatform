@@ -7,17 +7,56 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <!-- Main Grid Layout Area -->
+    <!-- 主区域 开始 -->
     <Grid x:Name="MainGridLayout">
-        <!-- Main Grid Layout: DockingManager Area -->
-        <avalonDock:DockingManager x:Name="dockingManager" Grid.Column="0">
+        <!-- 网格布局 行定义 开始 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!-- 网格布局 行定义 结束 -->
 
-            <!-- DockingManager: Set AvalonDock Theme -->
-            <avalonDock:DockingManager.Theme>
-                <avalonDock:AeroTheme/>
-            </avalonDock:DockingManager.Theme>
+        <!-- 网格布局 列定义 开始 -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <!-- 网格布局 列定义 结束 -->
 
+        <!-- 左侧停靠窗体 开始 -->
+        <!-- 左侧停靠窗体 网格布局 开始 -->
+        <Grid Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+            <!-- 左侧停靠窗体 网格布局 行定义 开始 -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!-- 左侧停靠窗体 网格布局 行定义 结束 -->
 
-        </avalonDock:DockingManager>
+            <!-- 左侧上方停靠窗体 开始 -->
+            <DockPanel HorizontalAlignment="Stretch" LastChildFill="False" Margin="3,3,3,3" Grid.Row="0" VerticalAlignment="Stretch">
+                <TextBox HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
+            </DockPanel>
+            <!-- 左侧上方停靠窗体 结束 -->
+
+            <!-- 左侧下上方停靠窗体 开始 -->
+            <DockPanel HorizontalAlignment="Stretch" LastChildFill="False" Margin="3,3,3,3" Grid.Row="1" VerticalAlignment="Stretch">
+                <TextBox HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
+            </DockPanel>
+            <!-- 左侧下方停靠窗体 结束 -->
+        </Grid>
+        <!-- 左侧停靠窗体 网格布局 结束 -->
+        <!-- 左侧停靠窗体 结束 -->
+
+        <!-- 主窗体 开始 -->
+        <Image Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="image_13618_20150709152925773.bmp"/>
+        <!-- 主窗体 结束 -->
+
+        <!-- 右侧停靠窗体 开始 -->
+        <DockPanel HorizontalAlignment="Stretch" LastChildFill="False" Margin="3,3,3,3" Grid.Column="2" VerticalAlignment="Stretch">
+            <TextBox HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
+        </DockPanel>
+        <!-- 右侧停靠窗体 结束 -->
     </Grid>
+    <!-- 主区域 结束 -->
 </UserControl>

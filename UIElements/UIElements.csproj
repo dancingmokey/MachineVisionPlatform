@@ -71,6 +71,9 @@
     <Compile Include="RealTimeCtrl.xaml.cs">
       <DependentUpon>RealTimeCtrl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestCtrl.xaml.cs">
+      <DependentUpon>TestCtrl.xaml</DependentUpon>
+    </Compile>
     <Page Include="CheckBoxExt.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RealTimeCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,6 +118,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image_13618_20150709152925773.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
