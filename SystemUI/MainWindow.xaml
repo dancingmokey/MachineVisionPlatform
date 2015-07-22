@@ -61,77 +61,30 @@
                     <ribbon:RibbonComboBox x:Name="RecNameCBox"
                                          SmallImageSource="Images\SmallIcon.png"
                                          Label="登记名称" />
-                    <ribbon:RibbonButton x:Name="RemoteCtrlBtn"
-                                         LargeImageSource="Images\LargeIcon.png"
-                                         Label="远程传输" />
                     <ribbon:RibbonButton x:Name="RunCtrlBtn"
                                          LargeImageSource="Images\LargeIcon.png"
                                          Label="开始运行" />
                 </ribbon:RibbonGroup>
                 <!-- 实时采集选项卡-采集控制组 结束 -->
 
-                <!-- 实时采集选项卡-相机设置组 开始 -->
-                <ribbon:RibbonGroup x:Name="CameraGroup" 
-                                    Header="相机设置">
-                    <ribbon:RibbonComboBox x:Name="CamFormatCBox"
+                <!-- 实时采集选项卡-数据回传组 开始 -->
+                <ribbon:RibbonGroup x:Name="TransmitGroup" 
+                                    Header="数据回传">
+                    <ribbon:RibbonComboBox x:Name="TargetAddrCBox"
                                          SmallImageSource="Images\SmallIcon.png"
-                                         Label="格式" />
-                    <ribbon:RibbonComboBox x:Name="CamFrameRateCBox"
+                                         Label="目标地址" />
+                    <ribbon:RibbonComboBox x:Name="TargetPortCBox"
                                          SmallImageSource="Images\SmallIcon.png"
-                                         Label="帧率" />
-                    <ribbon:RibbonComboBox x:Name="CamOverlayCBox"
+                                         Label="目标端口" />
+                    <ribbon:RibbonComboBox x:Name="TargetUnUseCBox"
                                          SmallImageSource="Images\SmallIcon.png"
-                                         Label="水印" />
-                    <ribbon:RibbonButton x:Name="CamSettingBtn"
+                                         Visibility="Hidden"
+                                         Label="目标" />
+                    <ribbon:RibbonButton x:Name="TransmitCtrlBtn"
                                          LargeImageSource="Images\LargeIcon.png"
-                                         Label="相机设置" />
+                                         Label="开始回传" />
                 </ribbon:RibbonGroup>
-                <!-- 实时采集选项卡-相机设置组 结束 -->
-
-                <!-- 实时采集选项卡-GPS设置组 开始 -->
-                <ribbon:RibbonGroup x:Name="GPSGroup" 
-                                    Header="GPS设置">
-                    <ribbon:RibbonCheckBox x:Name="GPSPositionCkBox"
-                                         Label="经纬度" 
-                                         IsChecked="True" />
-                    <ribbon:RibbonCheckBox x:Name="GPSSpeedCkBox"
-                                         Label="速度" 
-                                         IsChecked="True" />
-                    <ribbon:RibbonCheckBox x:Name="GPSPosAngelCkBox"
-                                         Label="方位角" 
-                                         IsChecked="True" />
-                    <ribbon:RibbonCheckBox x:Name="GPSTimeCkBox"
-                                         Label="时间"
-                                         IsChecked="True" />
-                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox2" 
-                                           Label="未知视图" 
-                                           Visibility="Hidden" 
-                                           IsChecked="True" />
-                    <ribbon:RibbonCheckBox x:Name="UnusedCkBox3" 
-                                           Label="未知视图" 
-                                           Visibility="Hidden" 
-                                           IsChecked="True" />
-                </ribbon:RibbonGroup>
-                <!-- 实时采集选项卡-GPS设置组 结束 -->
-
-                <!-- 实时采集选项卡-存储设置组 开始 -->
-                <ribbon:RibbonGroup x:Name="StorageGroup" 
-                                    Header="存储设置">
-                    <ribbon:RibbonButton x:Name="Button9"
-                                         LargeImageSource="Images\LargeIcon.png"
-                                         Label="Button1" />
-
-                    <ribbon:RibbonButton x:Name="Button10"
-                                         SmallImageSource="Images\SmallIcon.png"
-                                         Label="Button2" />
-                    <ribbon:RibbonButton x:Name="Button11"
-                                         SmallImageSource="Images\SmallIcon.png"
-                                         Label="Button3" />
-                    <ribbon:RibbonButton x:Name="Button12"
-                                         SmallImageSource="Images\SmallIcon.png"
-                                         Label="Button4" />
-                </ribbon:RibbonGroup>
-                <!-- 实时采集选项卡-存储设置组 结束 -->
+                <!-- 实时采集选项卡-传输控制组 结束 -->
 
                 <!-- 实时采集选项卡-Logo组 开始 -->
                 <ribbon:RibbonGroup x:Name="CamLogoGroup" 
@@ -268,13 +221,11 @@
         <!-- 主窗体区域 开始 -->
         <UIElements:RealTimeCtrl Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             
-            
         </UIElements:RealTimeCtrl>
         <!-- 主窗体区域 结束 -->
 
         <!-- 状态栏区域 开始 -->
         <StatusBar Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            
             
         </StatusBar>
         <!-- 状态栏区域 结束 -->

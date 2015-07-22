@@ -94,6 +94,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Document\相关图表.vsdx" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LargeIcon.png" />

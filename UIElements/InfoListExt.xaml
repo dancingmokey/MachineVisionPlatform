@@ -4,22 +4,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+             d:DesignHeight="300" d:DesignWidth="300" 
+             Initialized="InfoListExt_Initialized">
 
+    <!-- 主区域 开始 -->
+    <Grid>
+        <!-- 网格布局行定义 开始 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" x:Name="FilterGridRow"/>
+            <RowDefinition Height="*" x:Name="InfoListGridRow"/>
+        </Grid.RowDefinitions>
+        <!-- 网格布局行定义 结束 -->
+
+        <!-- 上半部分选择区域 开始 -->
+        <!-- 上半部分选择区域网格布局 开始 -->
         <Grid>
+            <!-- 网格布局列定义 开始 -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2,2,2,2"/>
-            <ComboBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2,2,2,2"/>
+            <!-- 网格布局列定义 结束 -->
 
-
+            <!-- 左侧选择控件框 开始 -->
+            <ComboBox x:Name="LeftFilterCBox" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5"/>
+            <!-- 左侧选择控件框 结束 -->
+            
+            <!-- 右侧选择控件框 开始 -->
+            <ComboBox x:Name="RightFilterCBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" IsEditable="True"/>
+            <!-- 右侧选择控件框 结束 -->
         </Grid>
+        <!-- 上半部分选择区域网格布局 结束 -->
+        <!-- 上半部分选择区域 结束 -->
+
+        <!-- 下方列表控件 开始 -->
+        <ListBox x:Name="InfoLBox" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5"/>
+        <!-- 下方列表控件 结束 -->
+
     </Grid>
+    <!-- 主区域 结束 -->
 </UserControl>

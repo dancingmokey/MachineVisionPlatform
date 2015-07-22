@@ -20,9 +20,37 @@ namespace UIElements
     /// </summary>
     public partial class InfoListExt : UserControl
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        enum ILE_STYLE
+        { 
+            Normal = 0x01, 
+            Hidden_Filter = 0x02
+        }
+
         public InfoListExt()
         {
             InitializeComponent();
         }
+
+        private void InfoListExt_Initialized(object sender, EventArgs e)
+        {
+
+        }
+
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public void SetInfoListStyle(ILE_STYLE eStyle)
+        //{
+        //    if (eStyle == ILE_STYLE.Hidden_Filter)
+        //    {
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
     }
 }
