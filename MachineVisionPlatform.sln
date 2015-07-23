@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemUI", "SystemUI\System
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIElements", "UIElements\UIElements.csproj", "{0F79DD57-4F76-47DA-A229-69D3191E9486}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CenterManage", "CenterManage\CenterManage.csproj", "{47F89A84-95C4-4C8E-83B5-43F3A042904A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,16 @@ Global
 		{0F79DD57-4F76-47DA-A229-69D3191E9486}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0F79DD57-4F76-47DA-A229-69D3191E9486}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0F79DD57-4F76-47DA-A229-69D3191E9486}.Release|x86.ActiveCfg = Release|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

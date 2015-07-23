@@ -53,17 +53,20 @@
                 <ribbon:RibbonGroup x:Name="RunGroup" 
                                     Header="采集控制">
                     <ribbon:RibbonComboBox x:Name="LineNameCBox"
-                                         SmallImageSource="Images\SmallIcon.png"
+                                         SmallImageSource="Images\LineSmallIcon.png"
                                          Label="选择线路" />
                     <ribbon:RibbonComboBox x:Name="UserNameCBox"
-                                         SmallImageSource="Images\SmallIcon.png"
+                                         SmallImageSource="Images\UserSmallIcon.png"
                                          Label="选择用户" />
                     <ribbon:RibbonComboBox x:Name="RecNameCBox"
-                                         SmallImageSource="Images\SmallIcon.png"
+                                         SmallImageSource="Images\NameSmallIcon.png"
                                          Label="登记名称" />
+                    <ribbon:RibbonButton x:Name="PrepareCtrlBtn"
+                                         LargeImageSource="Images\LargeIcon.png"
+                                         Label="预览" />
                     <ribbon:RibbonButton x:Name="RunCtrlBtn"
                                          LargeImageSource="Images\LargeIcon.png"
-                                         Label="开始运行" />
+                                         Label="运行" Click="RunCtrlBtn_Click" />
                 </ribbon:RibbonGroup>
                 <!-- 实时采集选项卡-采集控制组 结束 -->
 
@@ -71,10 +74,10 @@
                 <ribbon:RibbonGroup x:Name="TransmitGroup" 
                                     Header="数据回传">
                     <ribbon:RibbonComboBox x:Name="TargetAddrCBox"
-                                         SmallImageSource="Images\SmallIcon.png"
+                                         SmallImageSource="Images\AddrSmallIcon.png"
                                          Label="目标地址" />
                     <ribbon:RibbonComboBox x:Name="TargetPortCBox"
-                                         SmallImageSource="Images\SmallIcon.png"
+                                         SmallImageSource="Images\PortSmallIcon.png"
                                          Label="目标端口" />
                     <ribbon:RibbonComboBox x:Name="TargetUnUseCBox"
                                          SmallImageSource="Images\SmallIcon.png"
@@ -82,7 +85,7 @@
                                          Label="目标" />
                     <ribbon:RibbonButton x:Name="TransmitCtrlBtn"
                                          LargeImageSource="Images\LargeIcon.png"
-                                         Label="开始回传" />
+                                         Label="回传" />
                 </ribbon:RibbonGroup>
                 <!-- 实时采集选项卡-传输控制组 结束 -->
 
@@ -219,7 +222,7 @@
         <!-- 导航栏区域 结束 -->
 
         <!-- 主窗体区域 开始 -->
-        <UIElements:RealTimeCtrl Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <UIElements:RealTimeCtrl x:Name="RTCtrl" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             
         </UIElements:RealTimeCtrl>
         <!-- 主窗体区域 结束 -->

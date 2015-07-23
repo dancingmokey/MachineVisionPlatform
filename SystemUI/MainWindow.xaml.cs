@@ -20,11 +20,24 @@ namespace SystemUI
     /// </summary>
     public partial class MainWindow : RibbonWindow
     {
+        public int ncount = 0;
         public MainWindow()
         {
             InitializeComponent();
 
             // Insert code required on object creation below this point.
+        }
+
+        private void RunCtrlBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if ((ncount++)%2 == 0)
+            {
+                this.RTCtrl.InfoListExtDisplay(UIElements.ILE_STYLE.Hidden_Filter);
+            }
+            else
+            {
+                this.RTCtrl.InfoListExtDisplay(UIElements.ILE_STYLE.Normal);
+            }
         }
     }
 }

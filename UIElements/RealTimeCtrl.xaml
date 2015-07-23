@@ -27,29 +27,29 @@
 
                     <!-- 左侧AvalonDock面板组：垂直方向，3元素 开始 -->
                     <avalonDock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="240">
-                        <!-- 左侧最上方AvalonDock面板 开始 -->
+                        <!-- GPS信息面板 开始 -->
                         <avalonDock:LayoutAnchorablePane DockMinHeight="200" DockHeight="200">
                             <avalonDock:LayoutAnchorable Title="GPS信息">
-                                <UIElements:InfoListExt />
+                                <UIElements:InfoListExt x:Name="GPSInfoListExt"/>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
-                        <!-- 左侧最上方AvalonDock面板 结束 -->
+                        <!-- GPS信息面板 结束 -->
 
-                        <!-- 左侧居中AvalonDock面板 开始 -->
+                        <!-- 图像信息面板 开始 -->
                         <avalonDock:LayoutAnchorablePane DockHeight="300*">
                             <avalonDock:LayoutAnchorable Title="图像信息">
-                                <UIElements:InfoListExt />
+                                <UIElements:InfoListExt x:Name="ImageInfoListExt"/>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
-                        <!-- 左侧居中AvalonDock面板 结束 -->
+                        <!-- 图像信息面板 结束 -->
 
-                        <!-- 左侧最下方AvalonDock面板 开始 -->
+                        <!-- 传输信息面板 开始 -->
                         <avalonDock:LayoutAnchorablePane DockMinHeight="200" DockHeight="200">
                             <avalonDock:LayoutAnchorable Title="传输信息">
-                                <UIElements:InfoListExt />
+                                <UIElements:InfoListExt x:Name="TransInfoListExt"/>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
-                        <!-- 左侧最下方AvalonDock面板 结束 -->
+                        <!-- 传输信息面板 结束 -->
 
                     </avalonDock:LayoutAnchorablePaneGroup>
                     <!-- 左侧AvalonDock面板组：垂直方向，3元素 结束 -->
@@ -60,8 +60,8 @@
                         
                         <!-- 中间上方AvalonDock面板 开始 -->
                         <avalonDock:LayoutDocumentPane DockHeight="600*">
-                            <avalonDock:LayoutDocument Title="视频分组" CanClose="False" CanFloat="False">
-                                <Image />
+                            <avalonDock:LayoutDocument Title="图像显示" CanClose="False" CanFloat="False">
+                                <Image Source="image_13618_20150709152925773.bmp" />
                             </avalonDock:LayoutDocument>
                         </avalonDock:LayoutDocumentPane>
                         <!-- 中间上方AvalonDock面板 结束 -->
@@ -69,7 +69,7 @@
                         <!-- 中间下方AvalonDock面板 开始 -->
                         <avalonDock:LayoutDocumentPane DockMinHeight="200" DockHeight="200">
                             <avalonDock:LayoutDocument Title="采集信息" >
-                                <Image />
+                                <ListView />
                             </avalonDock:LayoutDocument>
                         </avalonDock:LayoutDocumentPane>
                         <!-- 中间下方AvalonDock面板 结束 -->

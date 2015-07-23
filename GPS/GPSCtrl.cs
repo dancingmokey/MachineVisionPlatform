@@ -64,11 +64,9 @@ namespace GPS
                 return;
 
             string strRMCData = strRecvData.Substring(nRmcStartIdx, nRmcEndIdx - nRmcStartIdx);
-            Console.WriteLine("RMC Data = " + strRMCData);
-
-
             if (_pRmcData.AnalysisData(strRMCData) == true)
             {
+                Console.WriteLine("RMC Data = " + strRMCData);
                 Console.WriteLine("Status : " + _pRmcData.Status.ToString());
                 Console.WriteLine("Date Time : " + _pRmcData.LocalTime);
                 Console.WriteLine("Latitude : " + _pRmcData.Latitude);
@@ -76,10 +74,7 @@ namespace GPS
                 Console.WriteLine("Speed : " + _pRmcData.Speed.ToString() + " Km/h");
                 Console.WriteLine("Position Angle : " + _pRmcData.PosAngle.ToString());
                 Console.WriteLine("MagDeclination : " + _pRmcData.MagDirection.ToString() + " " + _pRmcData.MagDeclination.ToString());
-            }
-
-            //Console.WriteLine(strRecvData);
-            Console.WriteLine("\n");
+             }
         }
 
 

@@ -16,18 +16,19 @@ using System.Windows.Shapes;
 namespace UIElements
 {
     /// <summary>
+    /// 
+    /// </summary>
+    public enum ILE_STYLE
+    {
+        Normal = 0x01,
+        Hidden_Filter = 0x02
+    }
+
+    /// <summary>
     /// InfoListExt.xaml 的交互逻辑
     /// </summary>
     public partial class InfoListExt : UserControl
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        enum ILE_STYLE
-        { 
-            Normal = 0x01, 
-            Hidden_Filter = 0x02
-        }
 
         public InfoListExt()
         {
@@ -39,18 +40,19 @@ namespace UIElements
 
         }
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //public void SetInfoListStyle(ILE_STYLE eStyle)
-        //{
-        //    if (eStyle == ILE_STYLE.Hidden_Filter)
-        //    {
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        public void SetInfoListStyle(ILE_STYLE eStyle)
+        {
+            if (eStyle == ILE_STYLE.Hidden_Filter)
+            {
+                FilterGridRow.Height = new GridLength(0);
+            }
+            else
+            {
+                FilterGridRow.Height = new GridLength(30);
+            }
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace GPS
 
         private static bool _bEnableRunning = false;
         private static Thread _pWorkThread = null;
-        private delegate void MyDelegate(Byte[] pRecvData); 
+        private delegate void GPSCommDelegate(Byte[] pRecvData); 
 
         /// <summary>
         /// 
@@ -51,9 +51,6 @@ namespace GPS
                 _bEnableRunning = false;
                 _pWorkThread.Join();
             }
-
-            //
-            Thread.Sleep(1000);
         }
 
         /// <summary>
@@ -69,7 +66,7 @@ namespace GPS
             Byte[] pRecvData = new Byte[1024];
 
             // 定义代理
-            MyDelegate pDelegate = new MyDelegate(GPS.GPSCtrl.AnalysisData);
+            GPSCommDelegate pDelegate = new GPSCommDelegate(GPS.GPSCtrl.AnalysisData);
 
             // 开始循环接受数据
             while (_bEnableRunning == true)
