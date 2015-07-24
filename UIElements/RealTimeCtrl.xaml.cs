@@ -25,11 +25,15 @@ namespace UIElements
             InitializeComponent();
         }
 
-        public void InfoListExtDisplay(ILE_STYLE eIleStyle)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="eIleStyle"></param>
+        public void InfoListExtDisplay(ILE_STYLE NewStyle)
         {
-            this.GPSInfoListExt.SetInfoListStyle(eIleStyle);
-            this.ImageInfoListExt.SetInfoListStyle(eIleStyle);
-            this.TransInfoListExt.SetInfoListStyle(eIleStyle);
+            this.GPSInfoListExt.ShowStyle = NewStyle;
+            this.ImageInfoListExt.ShowStyle = NewStyle;
+            this.TransInfoListExt.ShowStyle = NewStyle;
         }
     }
 

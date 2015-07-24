@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,29 +31,88 @@ namespace UIElements
     /// </summary>
     public partial class InfoListExt : UserControl
     {
-
-        public InfoListExt()
-        {
-            InitializeComponent();
-        }
-
-        private void InfoListExt_Initialized(object sender, EventArgs e)
-        {
-
+        /// <summary>
+        /// 
+        /// </summary>
+        private ILE_STYLE _style = ILE_STYLE.Normal;
+        public ILE_STYLE ShowStyle 
+        { 
+            get 
+            { 
+                return _style; 
+            } 
+            
+            set 
+            { 
+                _style = value;
+                this.ResetShowStyle();
+            } 
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public void SetInfoListStyle(ILE_STYLE eStyle)
+        private string _content = null;
+        public string Content 
+        { 
+            get 
+            { 
+                return _content; 
+            } 
+            
+            set 
+            { 
+                _content = value;
+                this.ResetContent();
+            } 
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InfoListExt()
         {
-            if (eStyle == ILE_STYLE.Hidden_Filter)
+            InitializeComponent();
+        }
+
+        public void CustomInitialize(ILE_STYLE CustomStyle, string ContentStr)
+        {
+            this.ShowStyle = CustomStyle;
+
+            this.Content = Content;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ResetShowStyle()
+        {
+            if (_style == ILE_STYLE.Hidden_Filter)
             {
                 FilterGridRow.Height = new GridLength(0);
             }
             else
             {
                 FilterGridRow.Height = new GridLength(30);
+            }
+        }
+
+        private void ResetContent()
+        {
+            // 解析Json字符串
+            JsonReader contentReader = new JsonTextReader(new StringReader(_content));
+
+            while (contentReader.Read())
+            {
+                if (contentReader.TokenType == JsonToken.PropertyName)
+                {
+
+                }
+                else if (contentReader.TokenType == JsonToken.String)
+                {
+
+                }
             }
         }
     }

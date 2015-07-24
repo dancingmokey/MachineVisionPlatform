@@ -39,5 +39,30 @@ namespace SystemUI
                 this.RTCtrl.InfoListExtDisplay(UIElements.ILE_STYLE.Normal);
             }
         }
+
+        private void GPSShowChBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CamShowChBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TransShowChBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RunShowChBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DevListShowChBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
