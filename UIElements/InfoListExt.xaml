@@ -37,7 +37,18 @@
         <!-- 上半部分选择区域 结束 -->
 
         <!-- 下方列表控件 开始 -->
-        <ListBox x:Name="InfoLBox" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5"/>
+        <ListView x:Name="InfoLView" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5">
+
+            <ListView.View>
+                <GridView x:Name="gridView1">
+                    <GridViewColumn Header="UserId" DisplayMemberBinding="{Binding Path=UserId}"></GridViewColumn>
+                    <GridViewColumn Header="UserName" DisplayMemberBinding="{Binding Path=UserName}"></GridViewColumn>
+                    <GridViewColumn Header="MobilePhone" DisplayMemberBinding="{Binding Path=MobilePhone}"></GridViewColumn>
+                    <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Path=Address}"></GridViewColumn>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
         <!-- 下方列表控件 结束 -->
 
     </Grid>
