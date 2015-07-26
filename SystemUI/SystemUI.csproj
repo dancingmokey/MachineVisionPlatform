@@ -22,7 +22,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -94,6 +94,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Document\相关图表.vsdx" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LargeIcon.png" />
@@ -101,6 +102,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Company_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIElements\UIElements.csproj">
+      <Project>{0f79dd57-4f76-47da-a229-69d3191e9486}</Project>
+      <Name>UIElements</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddrSmallIcon.png" />
+    <Resource Include="Images\LineSmallIcon.png" />
+    <Resource Include="Images\NameSmallIcon.png" />
+    <Resource Include="Images\PortSmallIcon.png" />
+    <Resource Include="Images\UserSmallIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Images\SplashScreen.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
