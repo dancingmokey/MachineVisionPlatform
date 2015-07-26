@@ -43,6 +43,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateCtrl.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Camera\Camera.csproj">
+      <Project>{571f3ff1-9d2d-4eb7-80d6-403924e89ee9}</Project>
+      <Name>Camera</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{846d118c-6aa8-460f-afce-8d48097a2d58}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPS\GPS.csproj">
+      <Project>{c3d40c05-f9e1-41fe-9785-ce7dfda1db24}</Project>
+      <Name>GPS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageProc\ImageProc.csproj">
+      <Project>{ca56de2b-15d9-4a8b-94f9-0e0d05ca7683}</Project>
+      <Name>ImageProc</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

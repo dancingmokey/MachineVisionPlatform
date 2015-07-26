@@ -17,6 +17,29 @@ using System.Windows.Shapes;
 
 namespace UIElements
 {
+    public class GPS_Json_Format
+    {
+
+    }
+
+    public class Image_Json_Format
+    {
+
+    }
+
+    public class Running_Json_Format
+    {
+
+    }
+
+    public class Replay_Json_Format
+    {
+
+    }
+
+
+
+
     /// <summary>
     /// 
     /// </summary>

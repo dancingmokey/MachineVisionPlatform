@@ -43,7 +43,6 @@ namespace GPS
         /// </summary>
         ~GPSCtrl()
         {
-            GPSComm.StopWorking();
         }
 
         /// <summary>
@@ -76,9 +75,5 @@ namespace GPS
                 Console.WriteLine("MagDeclination : " + _pRmcData.MagDirection.ToString() + " " + _pRmcData.MagDeclination.ToString());
              }
         }
-
-
-
-
     }
 }
