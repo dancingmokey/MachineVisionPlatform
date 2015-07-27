@@ -72,8 +72,14 @@
     <Compile Include="InfoListExt.xaml.cs">
       <DependentUpon>InfoListExt.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManageCtrl.xaml.cs">
+      <DependentUpon>ManageCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RealTimeCtrl.xaml.cs">
       <DependentUpon>RealTimeCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReplayCtrl.xaml.cs">
+      <DependentUpon>ReplayCtrl.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestCtrl.xaml.cs">
       <DependentUpon>TestCtrl.xaml</DependentUpon>
@@ -90,7 +96,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ManageCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RealTimeCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReplayCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

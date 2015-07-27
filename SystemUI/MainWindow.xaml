@@ -18,7 +18,7 @@
         <!-- 网格布局定义 结束 -->
 
         <!-- 导航栏区域 开始 -->
-        <ribbon:Ribbon x:Name="Ribbon">
+        <ribbon:Ribbon x:Name="Ribbon" SelectionChanged="Ribbon_SelectionChanged">
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:RibbonApplicationMenu SmallImageSource="Images\SmallIcon.png">
                     <ribbon:RibbonApplicationMenuItem Header="Hello _Ribbon"
@@ -208,6 +208,18 @@
         <UIElements:RealTimeCtrl x:Name="RTCtrl" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             
         </UIElements:RealTimeCtrl>
+        <!-- 主窗体区域 结束 -->
+
+        <!-- 主窗体区域 开始 -->
+        <UIElements:ReplayCtrl x:Name="RLCtrl" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        </UIElements:ReplayCtrl>
+        <!-- 主窗体区域 结束 -->
+
+        <!-- 主窗体区域 开始 -->
+        <UIElements:ManageCtrl x:Name="MgCtrl" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        </UIElements:ManageCtrl>
         <!-- 主窗体区域 结束 -->
 
         <!-- 状态栏区域 开始 -->

@@ -76,7 +76,7 @@ namespace UIElements
         /// 
         /// </summary>
         private string _content = null;
-        public string Content 
+        public string ShowContent 
         { 
             get 
             { 
@@ -103,7 +103,7 @@ namespace UIElements
         {
             this.ShowStyle = CustomStyle;
 
-            this.Content = Content;
+            this.ShowContent = ContentStr;
         }
 
         /// <summary>

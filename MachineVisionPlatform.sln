@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIElements", "UIElements\UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CenterManage", "CenterManage\CenterManage.csproj", "{47F89A84-95C4-4C8E-83B5-43F3A042904A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoTransmit", "VideoTransmit\VideoTransmit.csproj", "{C4A131A0-B304-47F4-BDA4-460F240288B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,16 @@ Global
 		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{47F89A84-95C4-4C8E-83B5-43F3A042904A}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C4A131A0-B304-47F4-BDA4-460F240288B1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

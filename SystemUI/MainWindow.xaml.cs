@@ -64,5 +64,44 @@ namespace SystemUI
         {
 
         }
+
+        private void Ribbon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //
+            int CurrIdx = Ribbon.SelectedIndex;
+
+            //
+            switch (CurrIdx)
+            {
+                case 0:
+                    {
+                        this.RTCtrl.Visibility = Visibility.Visible;
+                        this.RLCtrl.Visibility = Visibility.Hidden;
+                        this.MgCtrl.Visibility = Visibility.Hidden;
+                        break;
+                    }
+                case 1:
+                    {
+                        this.RTCtrl.Visibility = Visibility.Hidden;
+                        this.RLCtrl.Visibility = Visibility.Visible;
+                        this.MgCtrl.Visibility = Visibility.Hidden;
+                        break;
+                    }
+                case 2:
+                    {
+                        this.RTCtrl.Visibility = Visibility.Hidden;
+                        this.RLCtrl.Visibility = Visibility.Hidden;
+                        this.MgCtrl.Visibility = Visibility.Visible;
+                        break;
+                    }
+                default:
+                    {
+                        this.RTCtrl.Visibility = Visibility.Visible;
+                        this.RLCtrl.Visibility = Visibility.Hidden;
+                        this.MgCtrl.Visibility = Visibility.Hidden;
+                        break;
+                    }
+            }
+        }
     }
 }

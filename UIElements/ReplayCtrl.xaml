@@ -1,12 +1,11 @@
-﻿<UserControl xmlns:UIElements="clr-namespace:UIElements"
-             x:Class="UIElements.RealTimeCtrl"
+﻿<UserControl xmlns:UIElements="clr-namespace:UIElements"  x:Class="UIElements.ReplayCtrl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="800" d:DesignWidth="800">
 
     <!-- 主区域 开始 -->
     <!-- 网格布局 开始 -->
@@ -28,55 +27,52 @@
 
                     <!-- 左侧AvalonDock面板组：垂直方向，3元素 开始 -->
                     <avalonDock:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="240">
-                        <!-- GPS信息面板 开始 -->
+                        <!-- 记录列表面板 开始 -->
                         <avalonDock:LayoutAnchorablePane DockMinHeight="200" DockHeight="200">
-                            <avalonDock:LayoutAnchorable Title="GPS信息">
-                                <UIElements:InfoListExt x:Name="GPSInfoListExt"/>
+                            <avalonDock:LayoutAnchorable Title="记录列表">
+                                <UIElements:InfoListExt x:Name="RecordListExt"/>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
-                        <!-- GPS信息面板 结束 -->
+                        <!-- 记录列表面板 结束 -->
 
-                        <!-- 图像信息面板 开始 -->
-                        <avalonDock:LayoutAnchorablePane DockHeight="300*">
-                            <avalonDock:LayoutAnchorable Title="图像信息">
-                                <UIElements:InfoListExt x:Name="ImageInfoListExt"/>
+                        <!-- 详细列表面板 开始 -->
+                        <avalonDock:LayoutAnchorablePane DockMinHeight="400" DockHeight="400*">
+                            <avalonDock:LayoutAnchorable Title="详细信息">
+                                <ListBox x:Name="ContentLBox" TextOptions.TextHintingMode="Animated" >
+                                    <ListBoxItem Content="用户管理" Background="Linen" />
+                                    <ListBoxItem Content="设备管理" Background="Linen" ></ListBoxItem>
+                                    <ListBoxItem Content="记录管理" Background="Linen" ></ListBoxItem>
+                                    <ListBoxItem Content="基础数据" Background="Linen" ></ListBoxItem>
+                                </ListBox>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
-                        <!-- 图像信息面板 结束 -->
-
-                        <!-- 传输信息面板 开始 -->
-                        <avalonDock:LayoutAnchorablePane DockMinHeight="200" DockHeight="200">
-                            <avalonDock:LayoutAnchorable Title="传输信息">
-                                <UIElements:InfoListExt x:Name="TransInfoListExt"/>
-                            </avalonDock:LayoutAnchorable>
-                        </avalonDock:LayoutAnchorablePane>
-                        <!-- 传输信息面板 结束 -->
-
+                        <!-- 详细列表面板 结束 -->
                     </avalonDock:LayoutAnchorablePaneGroup>
                     <!-- 左侧AvalonDock面板组：垂直方向，3元素 结束 -->
 
 
                     <!-- 中间AvalonDock面板组：垂直方向，2元素 开始 -->
-                    <avalonDock:LayoutDocumentPaneGroup Orientation="Vertical" DockMinWidth="400">
-                        
-                        <!-- 图象显示面板 开始 -->
-                        <avalonDock:LayoutDocumentPane DockHeight="600*">
-                            <avalonDock:LayoutDocument Title="图像显示" CanClose="False" CanFloat="False">
-                                <Image Source="image_13618_20150709152925773.bmp" />
-                            </avalonDock:LayoutDocument>
-                        </avalonDock:LayoutDocumentPane>
+                    <avalonDock:LayoutAnchorablePaneGroup Orientation="Vertical" DockMinWidth="400">
+
+                        <!-- 图象显示面板 开始  -->
+                        <avalonDock:LayoutAnchorablePane DockHeight="300*">
+                            <avalonDock:LayoutAnchorable Title="图像显示">
+                                <Image Source="image_13618_20150709152925773.bmp" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
                         <!-- 图象显示面板 结束 -->
 
                         <!-- 采集信息面板 开始 -->
-                        <avalonDock:LayoutDocumentPane DockMinHeight="200" DockHeight="200">
-                            <avalonDock:LayoutDocument Title="采集信息" >
+                        <avalonDock:LayoutAnchorablePane x:Name="RunInfoPanel" DockMinHeight="250" DockHeight="250">
+                            <avalonDock:LayoutAnchorable Title="采集信息">
                                 <UIElements:InfoListExt x:Name="RunInfoListExt"/>
-                            </avalonDock:LayoutDocument>
-                        </avalonDock:LayoutDocumentPane>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
                         <!-- 采集信息面板 结束 -->
-                        
-                    </avalonDock:LayoutDocumentPaneGroup>
+
+                    </avalonDock:LayoutAnchorablePaneGroup>
                     <!-- 中间AvalonDock面板组：垂直方向，2元素 结束 -->
+
 
                     <!-- 右侧AvalonDock面板组：垂直方向，3元素 开始 -->
                     <avalonDock:LayoutAnchorablePaneGroup Orientation="Vertical" DockMinWidth="240" >
@@ -88,7 +84,7 @@
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
                         <!-- 右侧AvalonDock面板 结束 -->
-                        
+
                     </avalonDock:LayoutAnchorablePaneGroup>
                     <!-- 右侧AvalonDock面板组：垂直方向，3元素 结束 -->
 
@@ -97,10 +93,10 @@
 
             </avalonDock:LayoutRoot>
             <!-- AvalonDock管理器根布局 结束 -->
-            
+
         </avalonDock:DockingManager>
         <!-- AvalonDock管理器 结束 -->
-        
+
     </Grid>
     <!-- 网格布局 结束 -->
     <!-- 主区域 结束 -->
