@@ -12,5 +12,44 @@ namespace CenterManage
         public CenterManage()
         {
         }
+
+        ~CenterManage()
+        {
+
+        }
+
+        public void Initilization()
+        {
+
+        }
+
+        public void DisInitilization()
+        {
+
+        }
+
+        public void StartCollection()
+        {
+
+        }
+
+        public void StopCollection()
+        {
+
+        }
+
+        public void StartReplay()
+        {
+
+        }
+
+        public void StopReplay()
+        {
+
+        }
+
+        
+
+
     }
 }
